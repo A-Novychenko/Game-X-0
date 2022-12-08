@@ -1,0 +1,218 @@
+.current {
+    color: red;
+}
+
+.optionsJS {
+    color: #008000;
+    color: #ff0000;
+    color: #ffff00;
+    color: #0000ff;
+    color: #808080;
+    color: #a52a2a;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+}
+
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media screen and (min-width: 480px) {
+    .container {
+        width: 480px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+.main-title {
+    font-size: 40px;
+    text-align: center;
+}
+
+.container__btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sae__btn {
+
+    margin: 50px;
+
+    width: 100px;
+    height: 70px;
+
+    color: #000000;
+    background-color: #fff;
+    border: 1px solid #000000;
+
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.active_btn {
+    color: red;
+    border: 2px solid red;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 20px;
+
+}
+
+.nav-link {
+    display: block;
+    padding: 20px;
+
+    border: 1px solid blue;
+    background-color: #a1bae0;
+
+    text-align: center;
+    text-decoration: none;
+    color: #0000ff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* GAME X-0 */
+.game__content {
+    width: 306px;
+    border: 1px solid blue;
+    margin: 0 auto;
+}
+
+.game__item {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+
+    font-size: 70px;
+    line-height: 80px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid blue;
+    cursor: pointer;
+    transition: background 1000;
+
+}
+
+.game__item:hover {
+    background-color: green;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    padding: 93px 15px 94px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+    transition: transform var(--animation), visibility var(--animation), opacity var(--animation);
+}
+
+.backdrop.is-hidden {
+    visibility: hidden;
+    transform: scale(1.1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .backdrop {
+        padding: 0;
+    }
+}
+
+.modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background: #ffffff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+@media screen and (min-width: 480px) {
+    .modal {
+        max-width: 450px;
+        /* min-height: 609px; */
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* width: 528px;
+        height: 581px;
+        max-width: 100%;
+        min-height: auto; */
+    }
+}
+
+.modal__close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    fill: var(--black-color);
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: fill var(--animation);
+}
+
+.modal__close-btn:hover,
+.modal__close-btn:focus {
+    fill: var(--accent-color);
+}
