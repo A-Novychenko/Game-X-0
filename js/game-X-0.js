@@ -34,6 +34,8 @@ function onItemClick(e) {
   if (e.target.textContent) {
     return;
   }
+  const freeElements = document.querySelectorAll(".js-X-0-item");
+  const elem = [...freeElements];
 
   const id = Number(e.target.dataset.id);
 
@@ -44,12 +46,12 @@ function onItemClick(e) {
 
     if (isWin) {
       modalAlert("X is Winner!");
+      checkWinnerNumbers(stepX, elem);
 
       return;
     }
   }
 
-  const freeElements = document.querySelectorAll(".js-X-0-item");
   const freeElemArr = [...freeElements].filter((el) => el.textContent === "");
   const freeElQty = freeElemArr.length;
   const rendom = Math.floor(Math.random() * freeElQty);
@@ -63,7 +65,7 @@ function onItemClick(e) {
 
   if (isWin) {
     modalAlert("0 is Winner!");
-
+    checkWinnerNumbers(step0, elem);
     return;
   }
 
@@ -76,6 +78,20 @@ function onItemClick(e) {
 
 function checkWinner(arr) {
   return win.some((el) => el.every((el) => arr.includes(el)));
+}
+
+function checkWinnerNumbers(arr, elem) {
+  const winNumbers = [...win]
+    .filter((el) => el.every((el) => arr.includes(el)))
+    .flat(2);
+  for (const el of elem) {
+    const elId = Number(el.dataset.id);
+    if (winNumbers.includes(elId)) {
+      el.classList.add("current");
+    }
+  }
+
+  return winNumbers;
 }
 
 function reset() {
