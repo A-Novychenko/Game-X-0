@@ -44,7 +44,6 @@ function onItemClick(e) {
 
     if (isWin) {
       modalAlert("X is Winner!");
-      // reset();
 
       return;
     }
@@ -64,14 +63,12 @@ function onItemClick(e) {
 
   if (isWin) {
     modalAlert("0 is Winner!");
-    // reset();
 
     return;
   }
 
   if (stepX.length === 5) {
     modalAlert("DRAW");
-    // reset();
 
     return;
   }
