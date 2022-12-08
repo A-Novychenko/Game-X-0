@@ -2,15 +2,6 @@
     color: red;
 }
 
-.optionsJS {
-    color: #008000;
-    color: #ff0000;
-    color: #ffff00;
-    color: #0000ff;
-    color: #808080;
-    color: #a52a2a;
-}
-
 ul {
     list-style: none;
     margin: 0;
@@ -25,6 +16,8 @@ img {
 .container {
     padding-right: 15px;
     padding-left: 15px;
+    /* margin-top: auto;
+    margin-bottom: auto; */
 }
 
 @media screen and (min-width: 480px) {
@@ -47,87 +40,33 @@ img {
     }
 }
 
-.main-title {
-    font-size: 40px;
-    text-align: center;
-}
-
-.container__btn {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.sae__btn {
-
-    margin: 50px;
-
-    width: 100px;
-    height: 70px;
-
-    color: #000000;
-    background-color: #fff;
-    border: 1px solid #000000;
-
-    font-size: 20px;
-    text-align: center;
-
-}
-
-.active_btn {
-    color: red;
-    border: 2px solid red;
-    font-weight: 700;
-    font-size: 22px;
-}
-
-.nav-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-item {
-    margin: 20px;
-
-}
-
-.nav-link {
-    display: block;
-    padding: 20px;
-
-    border: 1px solid blue;
-    background-color: #a1bae0;
-
-    text-align: center;
-    text-decoration: none;
-    color: #0000ff;
-    font-size: 20px;
-    font-weight: 700;
-}
-
 
 /* GAME X-0 */
 .game__content {
-    width: 306px;
-    border: 1px solid blue;
-    margin: 0 auto;
+    width: 95vh;
+    height: 95vh;
+
+    margin-top: 50px
 }
 
 .game__item {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    /* width: 100px;
+    height: 100px; */
 
-    font-size: 70px;
-    line-height: 80px;
+    width: 30%;
+    height: 30%;
+
+
+    /* font-size: 70px; */
+
+    font-size: 10rem;
+    line-height: 2.5;
     text-align: center;
     vertical-align: middle;
     border: 1px solid blue;
     cursor: pointer;
-    transition: background 1000;
+    transition: background-color linear 1000;
 
 }
 

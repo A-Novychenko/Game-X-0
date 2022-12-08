@@ -1,8 +1,8 @@
-const content = document.querySelector('.game__content');
-const modalBackdrop = document.querySelector('[data-modal]');
-const modal = document.querySelector('.js-modal');
-const modalClose = document.querySelector('[data-modal-close]');
-const modalContent = document.createElement('p');
+const content = document.querySelector(".game__content");
+const modalBackdrop = document.querySelector("[data-modal]");
+const modal = document.querySelector(".js-modal");
+const modalClose = document.querySelector("[data-modal-close]");
+const modalContent = document.createElement("p");
 
 let stepX = [];
 let step0 = [];
@@ -17,8 +17,8 @@ const win = [
   [3, 6, 9],
 ];
 
-let markup = '';
-let player = 'X';
+let markup = "";
+let player = "X";
 
 modal.append(modalContent);
 
@@ -28,7 +28,7 @@ for (let i = 1; i <= 9; i += 1) {
 
 content.innerHTML = markup;
 
-content.addEventListener('click', onItemClick);
+content.addEventListener("click", onItemClick);
 
 function onItemClick(e) {
   if (e.target.textContent) {
@@ -37,21 +37,21 @@ function onItemClick(e) {
 
   const id = Number(e.target.dataset.id);
 
-  if (player === 'X') {
+  if (player === "X") {
     e.target.textContent = player;
     stepX.push(id);
     const isWin = checkWinner(stepX);
 
     if (isWin) {
-      modalAlert('X is Winner!');
-      reset();
+      modalAlert("X is Winner!");
+      // reset();
 
       return;
     }
   }
 
-  const freeElements = document.querySelectorAll('.js-X-0-item');
-  const freeElemArr = [...freeElements].filter(el => el.textContent === '');
+  const freeElements = document.querySelectorAll(".js-X-0-item");
+  const freeElemArr = [...freeElements].filter((el) => el.textContent === "");
   const freeElQty = freeElemArr.length;
   const rendom = Math.floor(Math.random() * freeElQty);
 
@@ -63,37 +63,38 @@ function onItemClick(e) {
   const isWin = checkWinner(step0);
 
   if (isWin) {
-    modalAlert('0 is Winner!');
-    reset();
+    modalAlert("0 is Winner!");
+    // reset();
 
     return;
   }
 
   if (stepX.length === 5) {
-    modalAlert('DRAW');
-    reset();
+    modalAlert("DRAW");
+    // reset();
 
     return;
   }
 }
 
 function checkWinner(arr) {
-  return win.some(el => el.every(el => arr.includes(el)));
+  return win.some((el) => el.every((el) => arr.includes(el)));
 }
 
 function reset() {
   content.innerHTML = markup;
-  player = 'X';
+  player = "X";
   stepX = [];
   step0 = [];
 }
 
-modalClose.addEventListener('click', onModalClose);
+modalClose.addEventListener("click", onModalClose);
 function onModalClose(e) {
-  modalBackdrop.classList.toggle('is-hidden');
+  modalBackdrop.classList.toggle("is-hidden");
+  reset();
 }
 
 function modalAlert(result) {
-  modalBackdrop.classList.toggle('is-hidden');
+  modalBackdrop.classList.toggle("is-hidden");
   modalContent.textContent = `${result}`;
 }
