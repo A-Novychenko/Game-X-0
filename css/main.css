@@ -1,5 +1,10 @@
-.current {
+body {
+    background-color: rgb(254, 255, 187);
+}
+
+body .current {
     color: red;
+    background-color: green;
 }
 
 ul {
@@ -95,15 +100,18 @@ img {
 
     text-align: center;
     vertical-align: middle;
+
     border: 1px solid blue;
+    border-radius: 15px;
+    background-color: rgb(43, 145, 145);
     cursor: pointer;
     transition: background-color linear 1000;
 
 }
 
-.game__item:hover {
+/* .game__item:hover {
     background-color: green;
-}
+} */
 
 .backdrop {
     position: fixed;
