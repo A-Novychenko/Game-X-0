@@ -1,8 +1,3 @@
-screen.addEventListener("orientationchange", function () {
-  console.log("The orientation of the screen is: " + screen.orientation);
-  screen.lockOrientation("portrait");
-});
-
 const content = document.querySelector(".game__content");
 const modalBackdrop = document.querySelector("[data-modal]");
 const modal = document.querySelector(".js-modal");
